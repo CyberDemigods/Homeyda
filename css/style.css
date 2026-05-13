@@ -39,7 +39,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 
 body {
   font-family: var(--f-fa);
@@ -1572,10 +1572,12 @@ html[lang="fa"] .blog-hero__eyebrow {
 .blog-hero__title {
   font-family: var(--f-fa);
   font-weight: 700;
-  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-size: clamp(1.85rem, 5.5vw, 4rem);
   color: var(--c-charcoal);
-  line-height: 1.1;
+  line-height: 1.15;
   margin-bottom: 1.25rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 html[lang="en"] .blog-hero__title {
@@ -1596,8 +1598,12 @@ html[lang="en"] .blog-hero__title {
   margin: 0 auto;
   padding: clamp(3rem, 6vh, 5rem) var(--pad-x) clamp(5rem, 10vh, 7rem);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: 2rem;
+}
+
+@media (max-width: 720px) {
+  .blog-list { grid-template-columns: 1fr; gap: 1.5rem; }
 }
 
 .blog-card {
@@ -1771,11 +1777,13 @@ html[lang="fa"] .article__category {
 .article__title {
   font-family: var(--f-fa);
   font-weight: 700;
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.6rem, 5vw, 3.5rem);
   color: var(--c-cream);
-  line-height: 1.15;
+  line-height: 1.2;
   margin-bottom: 1.25rem;
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 html[lang="en"] .article__title {
@@ -1985,8 +1993,12 @@ html[lang="en"] .related__title {
   margin: 0 auto;
   padding: 0 var(--pad-x);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 1.5rem;
+}
+
+@media (max-width: 720px) {
+  .related__grid { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
