@@ -10,3 +10,7 @@ Thumbs.db
 assets/images/_old_crops/
 assets/images/_video_frames_excluded/
 assets/images/logo-ig.jpg
+
+# Wrangler local cache
+.wrangler/
+node_modules/
