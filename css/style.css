@@ -235,10 +235,13 @@ html[dir="ltr"] .nav a::after { --ts-origin: left; }
 
   .nav {
     position: fixed;
-    inset: var(--topbar-h) 0 0 0;
-    background-color: var(--c-cream);
+    top: var(--topbar-h);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #FBF7F2;
     background-image:
-      radial-gradient(ellipse at top, var(--c-cream-d) 0%, var(--c-cream) 60%);
+      radial-gradient(ellipse at top, #F2EBE0 0%, #FBF7F2 60%);
     z-index: 60;
     flex-direction: column;
     align-items: center;
@@ -247,19 +250,16 @@ html[dir="ltr"] .nav a::after { --ts-origin: left; }
     gap: 1.75rem;
     font-size: 1.35rem;
     letter-spacing: 0.04em;
-    opacity: 0;
-    transform: translateY(-12px);
+    transform: translateY(-100%);
     pointer-events: none;
-    transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
-    visibility: hidden;
+    transition: transform 0.35s var(--ease);
     box-shadow: 0 24px 50px -20px rgba(26, 22, 20, 0.18);
+    will-change: transform;
   }
 
   .nav.is-open {
-    opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
-    visibility: visible;
   }
 
   .nav a {
