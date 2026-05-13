@@ -1,0 +1,12 @@
+{
+  "name": "Homeyda — Maison de Pâtisserie",
+  "short_name": "Homeyda",
+  "description": "Bento cakes, birthday cakes, wedding cakes in Shiraz.",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "theme_color": "#0E4A3C",
+  "background_color": "#FBF6EE",
+  "display": "standalone",
+  "start_url": "/"
+}

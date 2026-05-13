@@ -1,0 +1,12 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Backups & internal-only assets (not for production)
+assets/images/_old_crops/
+assets/images/_video_frames_excluded/
+assets/images/logo-ig.jpg

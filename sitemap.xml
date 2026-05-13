@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://homeyda.com/</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://homeyda.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeyda.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://homeyda.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://homeyda.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://homeyda.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeyda.com/blog/?lang=en"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://homeyda.com/blog/yalda-cake-shiraz.html</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://homeyda.com/blog/yalda-cake-shiraz.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeyda.com/blog/yalda-cake-shiraz.html?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homeyda.com/blog/shiraz-city-of-sweets.html</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://homeyda.com/blog/shiraz-city-of-sweets.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeyda.com/blog/shiraz-city-of-sweets.html?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://homeyda.com/blog/fondant-toppers-craft.html</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://homeyda.com/blog/fondant-toppers-craft.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeyda.com/blog/fondant-toppers-craft.html?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://homeyda.com/blog/vintage-cakes-trend.html</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://homeyda.com/blog/vintage-cakes-trend.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeyda.com/blog/vintage-cakes-trend.html?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://homeyda.com/blog/mothers-day-cake.html</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://homeyda.com/blog/mothers-day-cake.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeyda.com/blog/mothers-day-cake.html?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://homeyda.com/blog/bento-cake-love-for-two.html</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://homeyda.com/blog/bento-cake-love-for-two.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://homeyda.com/blog/bento-cake-love-for-two.html?lang=en"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
