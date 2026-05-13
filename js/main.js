@@ -59,6 +59,58 @@
     });
   }
 
+  function setupHamburger() {
+    const topbar = document.querySelector('.topbar__inner');
+    const nav = document.querySelector('.nav');
+    if (!topbar || !nav) return;
+
+    const btn = document.createElement('button');
+    btn.className = 'hamburger';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Menu');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-controls', 'primaryNav');
+    btn.innerHTML = '<span></span><span></span><span></span>';
+
+    if (!nav.id) nav.id = 'primaryNav';
+
+    const langSwitch = topbar.querySelector('.lang-switch');
+    if (langSwitch) topbar.insertBefore(btn, langSwitch);
+    else topbar.appendChild(btn);
+
+    function close() {
+      nav.classList.remove('is-open');
+      btn.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('has-menu-open');
+    }
+
+    function open() {
+      nav.classList.add('is-open');
+      btn.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('has-menu-open');
+    }
+
+    btn.addEventListener('click', () => {
+      if (nav.classList.contains('is-open')) close();
+      else open();
+    });
+
+    nav.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', close);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) close();
+    });
+
+    // Auto-close if viewport grows past mobile breakpoint
+    matchMedia('(min-width: 761px)').addEventListener('change', (e) => {
+      if (e.matches) close();
+    });
+  }
+
   function setupHeroSlider() {
     const slides = Array.from(document.querySelectorAll('.hero__slide'));
     const dots = Array.from(document.querySelectorAll('.hero__dot'));
@@ -273,6 +325,7 @@
   function init() {
     applyLang(detectInitialLang());
     bindLangSwitcher();
+    setupHamburger();
     setupYear();
     setupHeroSlider();
     setupGalleryFilters();
