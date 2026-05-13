@@ -43,6 +43,7 @@ window.HOMEYDA_I18N = {
     gallery_title: "از دفترچه‌ی هومیدا",
     gallery_lead: "نمونه‌هایی از کیک‌های ساخته‌شده — فیلتر کنید تا مجموعه‌ی موردعلاقه‌تان را ببینید.",
     gallery_cta: "دیدنِ همه در اینستاگرام",
+    gallery_show_more: "دیدنِ همه‌ی نمونه‌ها",
 
     filter_all: "همه",
     filter_bento: "بنتوکیک",
@@ -131,6 +132,7 @@ window.HOMEYDA_I18N = {
     gallery_title: "From the Homeyda Notebook",
     gallery_lead: "Samples of crafted cakes — filter to find the world you love.",
     gallery_cta: "See more on Instagram",
+    gallery_show_more: "See all the cakes",
 
     filter_all: "All",
     filter_bento: "Bento",

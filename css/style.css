@@ -486,17 +486,22 @@ html[lang="fa"] .hero__eyebrow {
   border-color: var(--c-cream);
 }
 
-/* Slide selector dots — bottom of hero */
+/* Slide selector dots — bottom of hero (centered, animation preserves translateX) */
 .hero__dots {
   position: absolute;
   bottom: clamp(4.5rem, 11vh, 7rem);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0);
   z-index: 2;
   display: flex;
   gap: 0.55rem;
   opacity: 0;
-  animation: heroFadeUp 1.2s 1.6s var(--ease) forwards;
+  animation: heroDotsFadeUp 1.2s 1.6s var(--ease) forwards;
+}
+
+@keyframes heroDotsFadeUp {
+  0%   { opacity: 0; transform: translate(-50%, 28px); }
+  100% { opacity: 1; transform: translate(-50%, 0); }
 }
 
 .hero__dot {
@@ -578,6 +583,12 @@ html[lang="fa"] .hero__scroll-label {
 @keyframes scrollHintBob {
   0%, 100% { transform: translate(-50%, 0); }
   50%      { transform: translate(-50%, -6px); }
+}
+
+/* Hide scroll hint on mobile — feels redundant next to the hamburger + dots */
+@media (max-width: 760px) {
+  .hero__scroll { display: none; }
+  .hero__dots { bottom: clamp(1.5rem, 5vh, 2.5rem); }
 }
 
 /* On portrait viewports — emphasize subject (background-position pulls subject up) */
@@ -969,6 +980,43 @@ html[lang="fa"] .chip { font-family: var(--f-fa); letter-spacing: 0; text-transf
 
 .gallery__cta-wrap {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gallery__show-more {
+  font-family: var(--f-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--c-coral);
+  color: var(--c-coral-d);
+  padding: 0.85rem 2rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+}
+
+html[lang="fa"] .gallery__show-more {
+  font-family: var(--f-fa);
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.gallery__show-more:hover {
+  background: var(--c-coral);
+  color: var(--c-charcoal);
+  border-color: var(--c-coral);
+}
+
+/* By default, tiles beyond the initial limit are hidden — JS adds .is-extra */
+.gallery__grid:not(.is-expanded) .gallery__tile.is-extra {
+  display: none;
 }
 
 /* ============================================

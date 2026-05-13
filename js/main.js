@@ -153,7 +153,25 @@
   function setupGalleryFilters() {
     const filters = document.querySelectorAll('.chip[data-filter]');
     const tiles = document.querySelectorAll('.gallery__tile[data-tags]');
+    const grid = document.getElementById('galleryGrid');
+    const showMoreBtn = document.getElementById('galleryShowMore');
     if (!filters.length || !tiles.length) return;
+
+    const INITIAL_LIMIT = 8;
+
+    // Mark tiles beyond the initial limit as "extra" — hidden until expanded
+    tiles.forEach((tile, i) => {
+      if (i >= INITIAL_LIMIT) tile.classList.add('is-extra');
+    });
+
+    function updateShowMore() {
+      if (!showMoreBtn) return;
+      const activeFilter = Array.from(filters).find((f) => f.classList.contains('is-active'))?.dataset.filter || 'all';
+      const expanded = grid && grid.classList.contains('is-expanded');
+      // Hide button when expanded, or when filter is active (filter shows all matching anyway via .is-hidden)
+      const shouldShow = activeFilter === 'all' && !expanded && tiles.length > INITIAL_LIMIT;
+      showMoreBtn.style.display = shouldShow ? '' : 'none';
+    }
 
     function apply(filter) {
       tiles.forEach((tile) => {
@@ -162,17 +180,35 @@
         tile.classList.toggle('is-hidden', !show);
       });
       filters.forEach((f) => f.classList.toggle('is-active', f.dataset.filter === filter));
+      // When filtering by tag, ignore the initial-limit (show all matches)
+      if (grid) {
+        if (filter !== 'all') grid.classList.add('is-expanded');
+        else grid.classList.remove('is-expanded');
+      }
+      updateShowMore();
     }
 
     filters.forEach((f) => {
       f.addEventListener('click', () => apply(f.dataset.filter));
     });
 
+    if (showMoreBtn && grid) {
+      showMoreBtn.addEventListener('click', () => {
+        grid.classList.add('is-expanded');
+        updateShowMore();
+        // Smooth-scroll to where new tiles appeared
+        const firstExtra = grid.querySelector('.gallery__tile.is-extra');
+        if (firstExtra) firstExtra.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    }
+
     const hashParts = location.hash.split('?');
     if (hashParts[1]) {
       const tagParam = new URLSearchParams(hashParts[1]).get('tag');
       if (tagParam) apply(tagParam);
     }
+
+    updateShowMore();
   }
 
   function setupLightbox() {
