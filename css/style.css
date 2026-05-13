@@ -202,7 +202,8 @@ html[dir="ltr"] .nav a::after { --ts-origin: left; }
   cursor: pointer;
   padding: 10px 8px;
   flex-shrink: 0;
-  margin-inline-start: auto;
+  margin-inline-start: 0.4rem;
+  z-index: 51;
 }
 
 .hamburger span {
@@ -228,11 +229,17 @@ html[dir="ltr"] .nav a::after { --ts-origin: left; }
 
   .hamburger { display: block; }
 
+  /* On mobile, .nav is fixed (out of flow), so push the lang-switch (and the
+     hamburger that follows it) all the way to the far edge. */
+  .lang-switch { margin-inline-start: auto; }
+
   .nav {
     position: fixed;
     inset: var(--topbar-h) 0 0 0;
-    background: var(--c-cream);
-    z-index: 49;
+    background-color: var(--c-cream);
+    background-image:
+      radial-gradient(ellipse at top, var(--c-cream-d) 0%, var(--c-cream) 60%);
+    z-index: 60;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -245,6 +252,7 @@ html[dir="ltr"] .nav a::after { --ts-origin: left; }
     pointer-events: none;
     transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
     visibility: hidden;
+    box-shadow: 0 24px 50px -20px rgba(26, 22, 20, 0.18);
   }
 
   .nav.is-open {
@@ -256,6 +264,7 @@ html[dir="ltr"] .nav a::after { --ts-origin: left; }
 
   .nav a {
     padding: 0.5rem 0;
+    color: var(--c-charcoal);
   }
 
   .nav a::after { bottom: -6px; }

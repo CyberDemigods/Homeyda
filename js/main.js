@@ -74,9 +74,8 @@
 
     if (!nav.id) nav.id = 'primaryNav';
 
-    const langSwitch = topbar.querySelector('.lang-switch');
-    if (langSwitch) topbar.insertBefore(btn, langSwitch);
-    else topbar.appendChild(btn);
+    // Place hamburger at the end of topbar (after lang-switch) so it sits on the far edge
+    topbar.appendChild(btn);
 
     function close() {
       nav.classList.remove('is-open');
