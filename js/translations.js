@@ -111,6 +111,20 @@ window.HOMEYDA_I18N = {
     abroad_help_lead: "اولین بار با کریپتو پرداخت می‌کنید؟",
     abroad_help_cta: "برای راهنمایی پیام بدهید — قدم‌به‌قدم همراهی‌تان می‌کنیم.",
 
+    faq_title: "پرسش‌های پرتکرار",
+    faq_q1: "پرداخت چقدر طول می‌کشد؟",
+    faq_a1: "تراکنش کریپتو معمولاً بین ۲ تا ۱۵ دقیقه تأیید می‌شود. به‌محضِ تأییدِ تراکنش، ما کارِ ساختِ کیک را شروع می‌کنیم.",
+    faq_q2: "من تا حالا با کریپتو کار نکرده‌ام — راه دیگری هست؟",
+    faq_a2: "متأسفانه به‌خاطر تحریم‌های بانکی، ویزا، مسترکارت و پی‌پل برای پرداخت به ایران کار نمی‌کنند. کریپتو تنها راهِ مطمئن است — اما نگران نباشید، نخستین خرید معمولاً در ۳۰ دقیقه انجام می‌شود. ما در دایرکت قدم‌به‌قدم همراهی‌تان می‌کنیم.",
+    faq_q3: "آیا این روش امن است؟",
+    faq_a3: "بله. کریپتو را مستقیماً از حسابِ خودتان در صرافی‌هایی مثل بایننس، کوین‌بیس یا کیف‌پولِ Trust Wallet به آدرسِ ما می‌فرستید. ما هیچ اطلاعاتِ کارت‌بانکی شما را نمی‌بینیم و ذخیره نمی‌کنیم.",
+    faq_q4: "تحویل به شهرهای دیگر هم انجام می‌دهید؟",
+    faq_a4: "بله. تحویل به تهران، اصفهان، تبریز، یزد، مشهد و دیگر شهرهای بزرگ از طریق اسنپ‌فود یا تیپاکس امکان‌پذیر است. هزینه‌ی تحویل در قیمت‌گذاری اولیه به شما اعلام می‌شود.",
+    faq_q5: "حریم خصوصی چه می‌شود؟",
+    faq_a5: "هویتِ شما نزدِ ما خصوصی می‌ماند. ما فقط نامِ گیرنده‌ی کیک و آدرسِ تحویل در ایران را می‌دانیم. بقیه‌ی اطلاعات — حتی نامِ خودِ شما اگر بخواهید — لازم نیست.",
+    faq_q6: "چقدر قبل از تاریخِ نیاز باید سفارش بدهم؟",
+    faq_a6: "حداقل یک هفته. برای طراحی‌های سفارشی و پیچیده، دو هفته. در ایامِ خاص (یلدا، نوروز، روز مادر، روز زن) سه هفته قبل سفارش بدهید تا جای کافی داشته باشیم.",
+
     footer_sub: "Maison de Pâtisserie · Shiraz",
     footer_rights: "تمامی حقوق محفوظ است."
   },
@@ -225,6 +239,20 @@ window.HOMEYDA_I18N = {
 
     abroad_help_lead: "First time paying with crypto?",
     abroad_help_cta: "Message us — we'll walk you through it, step by step.",
+
+    faq_title: "Frequently Asked Questions",
+    faq_q1: "How long does payment take?",
+    faq_a1: "A crypto transaction is usually confirmed within 2–15 minutes. As soon as we see the confirmation, we begin crafting your cake.",
+    faq_q2: "I've never used crypto — is there another way?",
+    faq_a2: "Sadly, due to banking sanctions, Visa, Mastercard, and PayPal don't work for payments to Iran. Crypto is the only reliable way — but don't worry, a first-time purchase usually takes about 30 minutes. We'll walk you through every step over direct message.",
+    faq_q3: "Is this method safe?",
+    faq_a3: "Yes. You send crypto directly from your own account on exchanges like Binance, Coinbase, or your Trust Wallet to our address. We never see or store your card details.",
+    faq_q4: "Do you deliver to other cities?",
+    faq_a4: "Yes — delivery to Tehran, Isfahan, Tabriz, Yazd, Mashhad, and other major cities is possible via Snappfood or Tipax. The delivery fee is included in the quote we send you.",
+    faq_q5: "What about privacy?",
+    faq_a5: "Your identity stays private with us. We only need the recipient's name and the delivery address in Iran. Anything else — even your own name, if you prefer — is unnecessary.",
+    faq_q6: "How far in advance should I order?",
+    faq_a6: "At least one week. For custom or intricate designs, two weeks. During peak seasons (Yalda, Nowruz, Mother's Day, Women's Day) please order three weeks ahead so we can secure your slot.",
 
     footer_sub: "Maison de Pâtisserie · Shiraz",
     footer_rights: "All rights reserved."

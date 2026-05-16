@@ -1633,6 +1633,87 @@ html[lang="fa"] .crypto__qr-placeholder { font-style: normal; }
 
 .abroad__help a:hover { border-bottom-color: var(--c-coral-d); }
 
+/* ---------- FAQ ---------- */
+.abroad__faq {
+  max-width: 720px;
+  margin: 4rem auto 0;
+  padding: 0 var(--pad-x);
+}
+
+.abroad__faq-title {
+  font-family: var(--f-display);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  text-align: center;
+  color: var(--c-charcoal);
+  margin-bottom: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+html[lang="fa"] .abroad__faq-title { font-family: var(--f-fa); font-weight: 600; }
+
+.faq {
+  border-top: 1px solid var(--c-line);
+  transition: background 0.3s var(--ease);
+}
+
+.faq:last-of-type { border-bottom: 1px solid var(--c-line); }
+
+.faq__q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0.25rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--f-display);
+  font-size: 1.02rem;
+  color: var(--c-charcoal);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: color 0.25s var(--ease);
+}
+
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q::marker { display: none; }
+
+html[lang="fa"] .faq__q { font-family: var(--f-fa); font-weight: 600; font-size: 1.05rem; }
+
+.faq__q:hover { color: var(--c-coral-d); }
+
+.faq__chevron {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--c-cream-d);
+  color: var(--c-coral-d);
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1;
+  transition: transform 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.faq[open] .faq__chevron {
+  transform: rotate(45deg);
+  background: var(--c-coral);
+  color: var(--c-cream);
+}
+
+.faq__a {
+  padding: 0 0.25rem 1.25rem;
+  color: var(--c-ink);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  max-width: 64ch;
+}
+
+html[lang="fa"] .faq__a { line-height: 1.9; }
+
 @media (max-width: 860px) {
   .abroad__steps {
     grid-template-columns: 1fr;
@@ -1641,6 +1722,8 @@ html[lang="fa"] .crypto__qr-placeholder { font-style: normal; }
   }
   .abroad__step + .abroad__step::before { display: none; }
   .abroad__cards { grid-template-columns: 1fr; max-width: 420px; }
+  .abroad__faq { margin-top: 3rem; }
+  .faq__q { font-size: 0.96rem; }
 }
 
 /* ============================================
