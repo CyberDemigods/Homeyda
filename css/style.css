@@ -1328,6 +1328,321 @@ html[lang="fa"] .contact__info-label { font-family: var(--f-fa); font-style: ita
   color: var(--c-charcoal);
 }
 
+.contact__abroad-hint {
+  max-width: var(--container);
+  margin: 1.5rem auto 0;
+  padding: 1.25rem var(--pad-x) 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--c-mute);
+  border-top: 1px solid var(--c-line);
+  padding-top: 1.5rem;
+}
+
+.contact__abroad-hint a {
+  color: var(--c-coral-d);
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--ease);
+  margin-inline-start: 0.4rem;
+}
+
+.contact__abroad-hint a:hover { border-bottom-color: var(--c-coral-d); }
+
+/* ============================================
+   ABROAD — Order from outside Iran (crypto)
+   ============================================ */
+.abroad {
+  padding: clamp(5rem, 10vh, 7rem) 0;
+  background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-cream-d) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.abroad::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  inset-inline-end: -120px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(156, 170, 142, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.abroad::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  inset-inline-start: -100px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 165, 165, 0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.abroad > * { position: relative; z-index: 1; }
+
+.abroad__sanctions {
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+  padding: 1.25rem var(--pad-x) 0;
+  text-align: center;
+  font-style: italic;
+  color: var(--c-mute);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+html[lang="fa"] .abroad__sanctions { font-style: normal; }
+
+/* ---------- 3-step process ---------- */
+.abroad__steps {
+  max-width: var(--container);
+  margin: 0 auto 4rem;
+  padding: 0 var(--pad-x);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  list-style: none;
+}
+
+.abroad__step {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  position: relative;
+}
+
+.abroad__step + .abroad__step::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  inset-inline-start: -1rem;
+  width: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--c-coral), transparent);
+}
+
+.abroad__step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--c-cream);
+  color: var(--c-coral-d);
+  border: 1px solid var(--c-coral);
+  font-family: var(--f-display);
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 6px 20px -8px rgba(201, 125, 125, 0.4);
+}
+
+.abroad__step-title {
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  color: var(--c-charcoal);
+  margin-bottom: 0.6rem;
+  font-weight: 400;
+}
+
+html[lang="fa"] .abroad__step-title { font-family: var(--f-fa); font-weight: 600; }
+
+.abroad__step-text {
+  color: var(--c-ink);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 32ch;
+  margin: 0 auto;
+}
+
+/* ---------- Crypto cards ---------- */
+.abroad__cards {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.crypto {
+  background: var(--c-cream);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+}
+
+.crypto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px -28px rgba(26, 22, 20, 0.25);
+  border-color: var(--c-coral);
+}
+
+.crypto__head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.crypto__icon {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--c-cream-d);
+  color: var(--c-coral-d);
+  border: 1px solid var(--c-coral-l);
+}
+
+.crypto[data-coin="btc"] .crypto__icon { color: #f7931a; border-color: rgba(247, 147, 26, 0.4); }
+.crypto[data-coin="usdt"] .crypto__icon { color: #26a17b; border-color: rgba(38, 161, 123, 0.4); }
+.crypto[data-coin="eth"] .crypto__icon { color: #627eea; border-color: rgba(98, 126, 234, 0.4); }
+
+.crypto__name {
+  font-family: var(--f-display);
+  font-size: 1.4rem;
+  color: var(--c-charcoal);
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+.crypto__network {
+  font-size: 0.78rem;
+  color: var(--c-mute);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+html[lang="fa"] .crypto__network { font-size: 0.82rem; }
+
+.crypto__qr {
+  width: 160px;
+  height: 160px;
+  margin: 0.5rem auto;
+  background: var(--c-cream-d);
+  border: 1px solid var(--c-line);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  position: relative;
+}
+
+.crypto__qr svg, .crypto__qr img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.crypto__qr-placeholder {
+  font-size: 0.78rem;
+  color: var(--c-mute);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+}
+
+html[lang="fa"] .crypto__qr-placeholder { font-style: normal; }
+
+.crypto__addr-wrap {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  background: var(--c-cream-d);
+  border: 1px solid var(--c-line);
+  border-radius: 8px;
+  padding: 0.5rem;
+  margin-top: auto;
+}
+
+.crypto__addr {
+  flex: 1 1 auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  color: var(--c-ink);
+  word-break: break-all;
+  align-self: center;
+  direction: ltr;
+  text-align: start;
+  line-height: 1.4;
+}
+
+.crypto__copy {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.7rem;
+  background: var(--c-cream);
+  border: 1px solid var(--c-line);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: var(--c-charcoal);
+  font-weight: 600;
+  transition: all 0.25s var(--ease);
+}
+
+.crypto__copy:not(:disabled):hover {
+  background: var(--c-coral);
+  border-color: var(--c-coral);
+  color: var(--c-charcoal);
+}
+
+.crypto__copy:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.crypto__copy.is-done {
+  background: var(--c-sage);
+  border-color: var(--c-sage);
+  color: var(--c-cream);
+}
+
+/* ---------- Help line ---------- */
+.abroad__help {
+  max-width: 640px;
+  margin: 3rem auto 0;
+  padding: 0 var(--pad-x);
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--c-mute);
+  line-height: 1.7;
+}
+
+.abroad__help a {
+  color: var(--c-coral-d);
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s var(--ease);
+  margin-inline-start: 0.3rem;
+}
+
+.abroad__help a:hover { border-bottom-color: var(--c-coral-d); }
+
+@media (max-width: 860px) {
+  .abroad__steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 480px;
+  }
+  .abroad__step + .abroad__step::before { display: none; }
+  .abroad__cards { grid-template-columns: 1fr; max-width: 420px; }
+}
+
 /* ============================================
    FOOTER
    ============================================ */

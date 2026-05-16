@@ -85,6 +85,32 @@ window.HOMEYDA_I18N = {
     info_lead_label: "زمانِ سفارش",
     info_lead_value: "حداقل یک هفته قبل از تاریخِ نیاز",
 
+    contact_abroad_hint: "از خارج از ایران سفارش می‌دهید؟",
+    contact_abroad_link: "راهنمای سفارش از خارج ↓",
+
+    abroad_eyebrow: "— از خارج از ایران —",
+    abroad_title: "شیرینیِ خانه، از راهِ دور",
+    abroad_lead: "می‌خواهید برای عزیزی در ایران کیکِ غافلگیرکننده بفرستید؟ ما هم همین را دوست داریم.",
+    abroad_sanctions: "به‌خاطر تحریم‌های بانکی، کارت‌های ویزا و مسترکارت و پی‌پل در ایران کار نمی‌کنند. ساده‌ترین راه برای دیاسپورا، پرداخت با ارز دیجیتال (کریپتو) است — مثل USDT که میلیون‌ها ایرانی روزانه استفاده می‌کنند.",
+
+    abroad_step1_title: "یک پیام بفرستید",
+    abroad_step1_text: "از طریق اینستاگرام، واتس‌اَپ یا تلگرام — تاریخ، تعداد نفرات، ایده‌ی کیک، آدرسِ تحویل در ایران.",
+    abroad_step2_title: "قیمت را به دلار دریافت می‌کنید",
+    abroad_step2_text: "ما قیمت نهایی را به دلار آمریکا اعلام می‌کنیم — شامل کیک، طراحی و تحویل در شهرِ موردنظر.",
+    abroad_step3_title: "با کریپتو پرداخت می‌کنید",
+    abroad_step3_text: "یکی از سه ارز زیر را انتخاب کنید، کد QR را اسکن کنید یا آدرس را کپی کنید، و اسکرین‌شات تراکنش را برای ما بفرستید. همین.",
+
+    crypto_usdt_network: "شبکه‌ی TRC20 (Tron) · کارمزد کم",
+    crypto_btc_network: "شبکه‌ی بیتکوین · امن، اما کارمزد متوسط",
+    crypto_eth_network: "شبکه‌ی اتریوم · پشتیبانی گسترده",
+    crypto_qr_pending: "کیف پول به‌زودی",
+    crypto_addr_pending: "— از طریق دایرکت دریافت کنید —",
+    crypto_copy_label: "کپی",
+    crypto_copy_done: "کپی شد!",
+
+    abroad_help_lead: "اولین بار با کریپتو پرداخت می‌کنید؟",
+    abroad_help_cta: "برای راهنمایی پیام بدهید — قدم‌به‌قدم همراهی‌تان می‌کنیم.",
+
     footer_sub: "Maison de Pâtisserie · Shiraz",
     footer_rights: "تمامی حقوق محفوظ است."
   },
@@ -173,6 +199,32 @@ window.HOMEYDA_I18N = {
     info_hours_value: "Saturday — Thursday · 8:00 — 16:00",
     info_lead_label: "Lead Time",
     info_lead_value: "Minimum one week before the date",
+
+    contact_abroad_hint: "Ordering from outside Iran?",
+    contact_abroad_link: "See how to send a cake from abroad ↓",
+
+    abroad_eyebrow: "— From Outside Iran —",
+    abroad_title: "A Taste of Home, From Afar",
+    abroad_lead: "Want to surprise someone in Iran with a cake from across the world? We love nothing more.",
+    abroad_sanctions: "Because of banking sanctions, Visa, Mastercard, and PayPal don't work with Iran. The simplest way for the diaspora is to pay in cryptocurrency — like USDT, which millions of Iranians use every day.",
+
+    abroad_step1_title: "Send us a message",
+    abroad_step1_text: "Through Instagram, WhatsApp, or Telegram — share the date, number of guests, your cake idea, and the delivery address in Iran.",
+    abroad_step2_title: "You receive a quote in USD",
+    abroad_step2_text: "We send back the final price in US dollars — cake, design, and delivery to the city of your choice, all included.",
+    abroad_step3_title: "You pay in crypto",
+    abroad_step3_text: "Pick one of the three currencies below, scan the QR or copy the address, then send us a screenshot of the transaction. That's it.",
+
+    crypto_usdt_network: "TRC20 (Tron) network · low fees",
+    crypto_btc_network: "Bitcoin network · secure, mid-range fees",
+    crypto_eth_network: "Ethereum network · wide support",
+    crypto_qr_pending: "Wallet coming soon",
+    crypto_addr_pending: "— request via direct message —",
+    crypto_copy_label: "Copy",
+    crypto_copy_done: "Copied!",
+
+    abroad_help_lead: "First time paying with crypto?",
+    abroad_help_cta: "Message us — we'll walk you through it, step by step.",
 
     footer_sub: "Maison de Pâtisserie · Shiraz",
     footer_rights: "All rights reserved."

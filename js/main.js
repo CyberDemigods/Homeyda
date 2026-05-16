@@ -298,7 +298,7 @@
 
   function setupReveal() {
     const targets = document.querySelectorAll(
-      '.hero__inner, .section-head, .card, .gallery__tile, .about__text, .pillar, .contact__card, .contact__info-block, .gallery__filters'
+      '.hero__inner, .section-head, .card, .gallery__tile, .about__text, .pillar, .contact__card, .contact__info-block, .gallery__filters, .abroad__step, .crypto, .abroad__sanctions, .abroad__help'
     );
     targets.forEach((el, i) => {
       el.classList.add('reveal');
@@ -329,6 +329,80 @@
   function setupYear() {
     const y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
+  }
+
+  function setupAbroad() {
+    const cards = document.querySelectorAll('.crypto[data-wallet]');
+    if (!cards.length) return;
+
+    const hasQR = typeof window.qrcode === 'function';
+
+    cards.forEach((card) => {
+      const wallet = (card.dataset.wallet || '').trim();
+      const qrBox = card.querySelector('.crypto__qr');
+      const addrEl = card.querySelector('.crypto__addr');
+      const copyBtn = card.querySelector('.crypto__copy');
+
+      if (!wallet) return; // leave placeholder UI as-is
+
+      // Render QR
+      if (qrBox && hasQR) {
+        try {
+          const qr = window.qrcode(0, 'M');
+          qr.addData(wallet);
+          qr.make();
+          qrBox.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+          const svg = qrBox.querySelector('svg');
+          if (svg) {
+            svg.setAttribute('shape-rendering', 'crispEdges');
+            svg.removeAttribute('width');
+            svg.removeAttribute('height');
+          }
+        } catch (e) {
+          // leave placeholder
+        }
+      }
+
+      // Fill address
+      if (addrEl) {
+        addrEl.textContent = wallet;
+        addrEl.removeAttribute('data-i18n');
+      }
+
+      // Enable copy
+      if (copyBtn) {
+        copyBtn.disabled = false;
+        copyBtn.addEventListener('click', async () => {
+          try {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              await navigator.clipboard.writeText(wallet);
+            } else {
+              const ta = document.createElement('textarea');
+              ta.value = wallet;
+              ta.style.position = 'fixed';
+              ta.style.opacity = '0';
+              document.body.appendChild(ta);
+              ta.select();
+              document.execCommand('copy');
+              document.body.removeChild(ta);
+            }
+            const labelEl = copyBtn.querySelector('span');
+            const lang = document.documentElement.getAttribute('lang') || 'fa';
+            const dict = (window.HOMEYDA_I18N || {})[lang] || {};
+            const original = dict.crypto_copy_label || 'Copy';
+            const done = dict.crypto_copy_done || 'Copied!';
+            if (labelEl) labelEl.textContent = done;
+            copyBtn.classList.add('is-done');
+            setTimeout(() => {
+              if (labelEl) labelEl.textContent = original;
+              copyBtn.classList.remove('is-done');
+            }, 1800);
+          } catch (e) {
+            // silent
+          }
+        });
+      }
+    });
   }
 
   function setupSmoothAnchors() {
@@ -365,6 +439,7 @@
     setupHeroSlider();
     setupGalleryFilters();
     setupLightbox();
+    setupAbroad();
     setupReveal();
     setupSmoothAnchors();
   }
