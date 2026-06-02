@@ -431,6 +431,27 @@
     });
   }
 
+  function setupScrollToTop() {
+    const btn = document.getElementById('scrollTop');
+    if (!btn) return;
+    const THRESHOLD = 500;
+    let ticking = false;
+    const update = () => {
+      btn.classList.toggle('is-visible', window.scrollY > THRESHOLD);
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    update();
+  }
+
   function init() {
     applyLang(detectInitialLang());
     bindLangSwitcher();
@@ -442,6 +463,7 @@
     setupAbroad();
     setupReveal();
     setupSmoothAnchors();
+    setupScrollToTop();
   }
 
   if (document.readyState === 'loading') {

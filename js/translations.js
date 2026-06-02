@@ -118,7 +118,9 @@ window.HOMEYDA_I18N = {
     faq_a6: "حداقل یک هفته. برای طراحی‌های سفارشی و پیچیده، دو هفته. در ایامِ خاص (یلدا، نوروز، روز مادر، روز زن) سه هفته قبل سفارش بدهید تا جای کافی داشته باشیم.",
 
     footer_sub: "Maison de Pâtisserie · Shiraz",
-    footer_rights: "تمامی حقوق محفوظ است."
+    footer_rights: "تمامی حقوق محفوظ است.",
+
+    back_to_top: "بازگشت به بالا"
   },
 
   en: {
@@ -239,6 +241,8 @@ window.HOMEYDA_I18N = {
     faq_a6: "At least one week. For custom or intricate designs, two weeks. During peak seasons (Yalda, Nowruz, Mother's Day, Women's Day) please order three weeks ahead so we can secure your slot.",
 
     footer_sub: "Maison de Pâtisserie · Shiraz",
-    footer_rights: "All rights reserved."
+    footer_rights: "All rights reserved.",
+
+    back_to_top: "Back to top"
   }
 };

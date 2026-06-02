@@ -39,7 +39,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
 
 body {
   font-family: var(--f-fa);
@@ -47,7 +47,7 @@ body {
   color: var(--c-ink);
   line-height: 1.65;
   font-size: 16px;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Sticky footer — keep .footer pinned to viewport bottom on short pages */
@@ -2402,4 +2402,55 @@ html[lang="en"] .related__title {
 @media (prefers-reduced-motion: reduce) {
   .lightbox, .lightbox__img { transition: none; }
   .lightbox.is-open .lightbox__img { transform: none; }
+}
+
+/* ============================================
+   SCROLL-TO-TOP BUTTON
+   ============================================ */
+.scroll-top {
+  position: fixed;
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1rem, 3vw, 1.75rem);
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--c-charcoal);
+  color: var(--c-cream);
+  box-shadow: 0 8px 24px rgba(26, 22, 20, 0.18), 0 2px 6px rgba(26, 22, 20, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.28s ease, transform 0.28s ease, background-color 0.2s ease, color 0.2s ease;
+  z-index: 80;
+}
+
+.scroll-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  background: var(--c-coral-d);
+  color: var(--c-cream);
+}
+
+.scroll-top:focus-visible {
+  outline: 2px solid var(--c-coral-d);
+  outline-offset: 3px;
+}
+
+.scroll-top svg {
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .scroll-top { width: 42px; height: 42px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top { transition: opacity 0.2s ease; transform: none; }
 }
