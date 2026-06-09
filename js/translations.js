@@ -53,6 +53,10 @@ window.HOMEYDA_I18N = {
     filter_character: "شخصیت‌ها",
     filter_floral: "گل",
     filter_kids: "بچگانه",
+    filter_wedding: "عروسی",
+    filter_men: "مردانه",
+    filter_fondant: "فوندانت",
+    filter_occasion: "مناسبتی",
 
     about_eyebrow: "— درباره‌ی ما —",
     about_title: "از دستِ آناهیتا، با عشق",
@@ -176,6 +180,10 @@ window.HOMEYDA_I18N = {
     filter_character: "Characters",
     filter_floral: "Floral",
     filter_kids: "Kids",
+    filter_wedding: "Wedding",
+    filter_men: "Men's",
+    filter_fondant: "Fondant",
+    filter_occasion: "Seasonal",
 
     about_eyebrow: "— About Us —",
     about_title: "From Anahita's hands, with love",
