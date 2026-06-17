@@ -9,6 +9,7 @@ window.HOMEYDA_I18N = {
 
     nav_collections: "مجموعه‌ها",
     nav_gallery: "گالری",
+    nav_shop: "فروشگاه",
     nav_blog: "دفترچه",
     nav_about: "درباره‌ی هومیدا",
     nav_contact: "سفارش",
@@ -136,6 +137,7 @@ window.HOMEYDA_I18N = {
 
     nav_collections: "Collections",
     nav_gallery: "Gallery",
+    nav_shop: "Shop",
     nav_blog: "Journal",
     nav_about: "About",
     nav_contact: "Order",

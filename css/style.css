@@ -345,6 +345,20 @@ body.has-menu-open { overflow: hidden; }
   color: var(--c-cream);
 }
 
+/* Soft dark halo behind the title — keeps the white text legible over
+   bright product shots while letting the photo stay airy at the edges. */
+.hero__inner::before {
+  content: "";
+  position: absolute;
+  inset: -12% -8%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center,
+    rgba(26, 22, 20, 0.55) 0%,
+    rgba(26, 22, 20, 0.34) 42%,
+    rgba(26, 22, 20, 0) 72%);
+}
+
 .hero__logo {
   width: clamp(110px, 13vw, 150px);
   height: clamp(110px, 13vw, 150px);

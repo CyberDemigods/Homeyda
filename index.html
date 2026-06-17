@@ -44,7 +44,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Forum&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@500;600&family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=25">
+  <link rel="stylesheet" href="css/style.css?v=26">
 
   <!-- Schema.org structured data -->
   <script type="application/ld+json">
@@ -140,6 +140,8 @@
       </a>
 
       <nav class="nav" aria-label="Primary">
+        <!-- Shop link hidden until shop launches on prod (avoids a dead link). Restore when shop.homeyda.com is live. -->
+        <!-- <a href="shop/" data-i18n="nav_shop">فروشگاه</a> -->
         <a href="#collections" data-i18n="nav_collections">مجموعه‌ها</a>
         <a href="#gallery" data-i18n="nav_gallery">گالری</a>
         <a href="blog/" data-i18n="nav_blog">دفترچه</a>
@@ -158,11 +160,12 @@
   <!-- Hero -->
   <section id="hero" class="hero">
     <div class="hero__slider" aria-hidden="true">
-      <div class="hero__slide is-active" style="background-image: url('assets/images/gallery/duck-daisy-white.jpg'); background-position: center 38%;"></div>
-      <div class="hero__slide" style="background-image: url('assets/images/gallery/pomegranate-yalda.jpg'); background-position: center 42%;"></div>
-      <div class="hero__slide" style="background-image: url('assets/images/gallery/mother-rose-minimal.jpg'); background-position: center 55%;"></div>
-      <div class="hero__slide" style="background-image: url('assets/images/gallery/farmer-kid.jpg'); background-position: center 35%;"></div>
-      <div class="hero__slide" style="background-image: url('assets/images/gallery/teddy-autumn.jpg'); background-position: center 45%;"></div>
+      <div class="hero__slide is-active" style="background-image: url('assets/images/hero/hero-red-pomegranate.jpg'); background-position: center 50%;"></div>
+      <div class="hero__slide" style="background-image: url('assets/images/hero/hero-vintage-cream.jpg'); background-position: center 52%;"></div>
+      <div class="hero__slide" style="background-image: url('assets/images/hero/hero-beach-teal.jpg'); background-position: center 48%;"></div>
+      <div class="hero__slide" style="background-image: url('assets/images/hero/hero-vintage-roses.jpg'); background-position: center 46%;"></div>
+      <div class="hero__slide" style="background-image: url('assets/images/hero/hero-butterfly-pastel.jpg'); background-position: center 45%;"></div>
+      <div class="hero__slide" style="background-image: url('assets/images/hero/hero-minicakes-roses.jpg'); background-position: center 55%;"></div>
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__vignette" aria-hidden="true"></div>
@@ -197,6 +200,7 @@
       <button class="hero__dot" data-slide="2" aria-label="Slide 3"></button>
       <button class="hero__dot" data-slide="3" aria-label="Slide 4"></button>
       <button class="hero__dot" data-slide="4" aria-label="Slide 5"></button>
+      <button class="hero__dot" data-slide="5" aria-label="Slide 6"></button>
     </div>
 
     <a href="#collections" class="hero__scroll" aria-label="Scroll down">
@@ -387,7 +391,19 @@
       <button class="gallery__tile" type="button" style="--ar: 0.799" data-tags="character,birthday,fun" data-src="assets/images/gallery/comic-cake-rainbow-slice.jpg" data-caption-fa="کیک کارتونی اسلایسی — رنگین‌کمان، کرم پسته‌ای زعفرانی" data-caption-en="Comic slice cake — rainbow, pistachio-saffron filling">
         <img src="assets/images/gallery/comic-cake-rainbow-slice.jpg" alt="Rainbow comic slice cake" loading="lazy">
       </button>
-    
+      <button class="gallery__tile" type="button" style="--ar: 0.8" data-tags="character,kids,birthday" data-src="assets/images/gallery/caterpillar-kids.jpg" data-caption-fa="کیک تولد کودک — کرم‌های رنگی و بامزه" data-caption-en="Kids birthday cake — cute colourful caterpillars">
+        <img src="assets/images/gallery/caterpillar-kids.jpg" alt="Kids caterpillar birthday cake" loading="lazy">
+      </button>
+      <button class="gallery__tile" type="button" style="--ar: 0.8" data-tags="bento,character,kids" data-src="assets/images/gallery/bento-teddy-months.jpg" data-caption-fa="بنتوکیک خرس — تمِ تدی برای جشن ماهگی" data-caption-en="Teddy bento — bear theme for a baby's milestone">
+        <img src="assets/images/gallery/bento-teddy-months.jpg" alt="Teddy bear bento milestone cake" loading="lazy">
+      </button>
+      <button class="gallery__tile" type="button" style="--ar: 0.8" data-tags="bento,character,kids" data-src="assets/images/gallery/bento-penguin-months.jpg" data-caption-fa="بنتوکیک پنگوئن — جشن ماهگیِ نوزاد" data-caption-en="Penguin bento — baby monthly milestone">
+        <img src="assets/images/gallery/bento-penguin-months.jpg" alt="Penguin bento milestone cake" loading="lazy">
+      </button>
+      <button class="gallery__tile" type="button" style="--ar: 0.8" data-tags="character,fun,birthday" data-src="assets/images/gallery/frog-green.jpg" data-caption-fa="کیک قورباغه — سبزِ بامزه با وسپا" data-caption-en="Frog cake — playful green with a Vespa">
+        <img src="assets/images/gallery/frog-green.jpg" alt="Green frog cake with Vespa" loading="lazy">
+      </button>
+
     </div>
 
     <!-- Lightbox -->
@@ -644,7 +660,7 @@
   </button>
 
   <script src="js/qrcode.min.js?v=26" defer></script>
-  <script src="js/translations.js?v=27" defer></script>
+  <script src="js/translations.js?v=28" defer></script>
   <script src="js/main.js?v=26" defer></script>
 </body>
 </html>
