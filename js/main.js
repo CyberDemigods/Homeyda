@@ -9,6 +9,9 @@
   function detectInitialLang() {
     const fromUrl = new URLSearchParams(location.search).get('lang');
     if (fromUrl && SUPPORTED.includes(fromUrl)) return fromUrl;
+    // language-locked standalone pages (e.g. single-language landings)
+    const lock = document.documentElement.getAttribute('data-lang-lock');
+    if (lock && SUPPORTED.includes(lock)) return lock;
     // /en/ pages are English by path (so the URL and content always agree)
     if (/^\/en(\/|$)/.test(location.pathname)) return 'en';
     const stored = localStorage.getItem(STORAGE_KEY);
@@ -63,7 +66,10 @@
       b.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
-    localStorage.setItem(STORAGE_KEY, lang);
+    // don't let a single-language landing clobber the visitor's global preference
+    if (!document.documentElement.hasAttribute('data-lang-lock')) {
+      localStorage.setItem(STORAGE_KEY, lang);
+    }
   }
 
   function bindLangSwitcher() {
