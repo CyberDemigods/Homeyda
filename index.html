@@ -15,7 +15,7 @@
   <!-- TODO: replace placeholder domain with real one before launch -->
   <link rel="canonical" href="https://homeyda.com/">
   <link rel="alternate" hreflang="fa" href="https://homeyda.com/">
-  <link rel="alternate" hreflang="en" href="https://homeyda.com/?lang=en">
+  <link rel="alternate" hreflang="en" href="https://homeyda.com/en/">
   <link rel="alternate" hreflang="x-default" href="https://homeyda.com/">
 
   <!-- Open Graph -->
@@ -76,7 +76,19 @@
     ],
     "image": "https://homeyda.com/og-image.jpg",
     "logo": "https://homeyda.com/logo.png",
-    "priceRange": "$$"
+    "priceRange": "$$",
+    "geo": { "@type": "GeoCoordinates", "latitude": 29.5918, "longitude": 52.5837 },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Cakes by Homeyda",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Birthday cakes in Shiraz" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Bento cakes" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Wedding & engagement cakes" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Custom cakes" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Cake & flower box" } }
+      ]
+    }
   }
   </script>
 
@@ -689,6 +701,6 @@
 
   <script src="js/qrcode.min.js?v=26" defer></script>
   <script src="js/translations.js?v=29" defer></script>
-  <script src="js/main.js?v=26" defer></script>
+  <script src="js/main.js?v=27" defer></script>
 </body>
 </html>

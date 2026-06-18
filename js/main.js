@@ -9,9 +9,22 @@
   function detectInitialLang() {
     const fromUrl = new URLSearchParams(location.search).get('lang');
     if (fromUrl && SUPPORTED.includes(fromUrl)) return fromUrl;
+    // /en/ pages are English by path (so the URL and content always agree)
+    if (/^\/en(\/|$)/.test(location.pathname)) return 'en';
     const stored = localStorage.getItem(STORAGE_KEY);
     if (stored && SUPPORTED.includes(stored)) return stored;
     return 'fa';
+  }
+
+  // Map current URL to its counterpart in the other language (real separate pages).
+  function langUrl(lang) {
+    const p = location.pathname;
+    const onEn = /^\/en(\/|$)/.test(p);
+    if (lang === 'en') return onEn ? null : '/en' + (p === '/' ? '/' : p);
+    if (!onEn) return null;
+    if (p === '/en' || p === '/en/') return '/';
+    if (/^\/en\/blog(\/|$)/.test(p)) return p.replace(/^\/en/, '');
+    return '/'; // other /en/ pages (e.g. landing) fall back to FA home
   }
 
   function applyLang(lang) {
@@ -55,7 +68,15 @@
 
   function bindLangSwitcher() {
     document.querySelectorAll('.lang-btn').forEach((b) => {
-      b.addEventListener('click', () => applyLang(b.dataset.lang));
+      b.addEventListener('click', () => {
+        const target = langUrl(b.dataset.lang);
+        if (target) {
+          localStorage.setItem(STORAGE_KEY, b.dataset.lang);
+          location.href = target; // navigate to the real other-language page
+        } else {
+          applyLang(b.dataset.lang); // already on the right side; just apply
+        }
+      });
     });
   }
 
